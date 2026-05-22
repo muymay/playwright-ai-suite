@@ -9,3 +9,5 @@ test('homepage has correct title', async ({page}) => {
     await page.goto('https://playwright.dev/'); 
     await expect(page).toHaveTitle(/Playwright/); // forward dashes - regular expression to match anything containing word in the title
 })
+// to run the test 
+// npx playwright test example.spec.ts

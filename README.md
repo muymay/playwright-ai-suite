@@ -7,5 +7,26 @@
 `npx playwright test smoke/test.spec.ts`
 
 Reading Documentation for this Phase: 
-* https://playwright.dev/docs/intro
-*  https://docs.npmjs.com/about-npm
+1. https://playwright.dev/docs/intro
+2. https://docs.npmjs.com/about-npm
+
+**Phase 2: Writing Tests with AAA Pattern**
+Website used in demonstration: demoqa.com
+1. Text Box
+Concepts covered in this phase: 
+    1. `getByPlaceholder` locator
+    2. `getByRole` locator
+    3. `toBeVisible` assertion
+Learned: labels and inputs are different in HTML elements, locator priority sometimes there are sections with no placeholder so finding a different solution is viable such as `page.locator` and always test the website first to understand the structure of the elements and how to locate them. Likewise the spelling of the input fields is not even permanent instead permananet address which makes the test fail so being observant is needed.
+Bug: No Placeholder and mispelled output field for permanent address -> permananet address :
+Fixed: No Placeholder -> used locator and for mispelled used the actual mispelled word on the locator to make it work.
+2. Check Box
+3. Login test
+4. First negative test
+5. Radio Button
+6. Dropdown test
+
+Reading Documentation for this Phase:
+1. playwright.dev/docs/writing-tests
+2. playwright.dev/docs/locators
+3. https://playwright.dev/docs/test-assertions
