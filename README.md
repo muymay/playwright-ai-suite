@@ -17,10 +17,19 @@ Concepts covered in this phase:
     1. `getByPlaceholder` locator
     2. `getByRole` locator
     3. `toBeVisible` assertion
+
 Learned: labels and inputs are different in HTML elements, locator priority sometimes there are sections with no placeholder so finding a different solution is viable such as `page.locator` and always test the website first to understand the structure of the elements and how to locate them. Likewise the spelling of the input fields is not even permanent instead permananet address which makes the test fail so being observant is needed.
 Bug: No Placeholder and mispelled output field for permanent address -> permananet address :
 Fixed: No Placeholder -> used locator and for mispelled used the actual mispelled word on the locator to make it work.
-2. Check Box
+
+2. Check Box [May 22, 2026]
+
+Built: checkbox tree expansion test with sibling and parent
+Learned: sibling vs child HTML relationships, aria-labels, roles, etc.
+Chaining locators withe the getByRole + locator() specifies the element to be located within the parent even with the same locator in the page. Meaning strict mode is not needed when using chaining locators.
+Bug: Checkbox tree expansion test was not working because the locator was not specific enough and there were multiple elements with the same locator in the page. 
+Fixed: Used chaining locators
+
 3. Login test
 4. First negative test
 5. Radio Button
