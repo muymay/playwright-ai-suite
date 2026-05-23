@@ -66,7 +66,7 @@ test ('checkbox form confirms outputs correctly', async ({ page }) => {
     // Check Box
     await page.getByRole('checkbox', { name: 'Word File.doc' }).check();
     // Verify Output
-    await expect(page.getByText('You have selected : wordFile')).toBeVisible();
+    await expect(page.getByText('You have selected :wordFile')).toBeVisible();
 })
 
 // npx playwright test checkbox.spec.ts
