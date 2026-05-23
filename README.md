@@ -30,10 +30,15 @@ Chaining locators withe the getByRole + locator() specifies the element to be lo
 Bug: Checkbox tree expansion test was not working because the locator was not specific enough and there were multiple elements with the same locator in the page. 
 Fixed: Used chaining locators
 
-3. Login test
-4. First negative test
-5. Radio Button
-6. Dropdown test
+3. Login test + First negative test [May 23, 2026]
+
+Built: negative login test + registration [unfinished due to reCaptcha] + positive login test
+Learned: exact: true prevents strict mode on partial text matches, reCaptcha is deliberately untestable except with test environment that disables it. Log out was a link not a button thanks to looking at the test results and looking at the snapshot of the erorr it gave me the hint to look over it, so always inspect and look over test results and snapshots to understand the error and how to fix it.
+Broken: strict mode on heading locators, logout button assumption
+Fixed: exact: true, getByRole('link', {name: /Log out/, exact: true}) instead of button.
+
+5. Radio Button + Dropdown test
+6. Full suite, fix what breaks
 
 Reading Documentation for this Phase:
 1. playwright.dev/docs/writing-tests
