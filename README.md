@@ -37,10 +37,18 @@ Learned: exact: true prevents strict mode on partial text matches, reCaptcha is 
 Broken: strict mode on heading locators, logout button assumption
 Fixed: exact: true, getByRole('link', {name: /Log out/, exact: true}) instead of button.
 
-5. Radio Button + Dropdown test
+5. Radio Button + Dropdown test [May 24, 2026]
+
+Built: radio button regression test
+Learned: .isVisible() without expect is silent - always wrap with expect to get feedback on the test results. locator(#id) is mroe specific than getByRole and getByText so it should be used when there are multiple elements with the same role or text in the page.
+Bug: getByRole for radio buttons with custom ids
+Fixed: used locator, and inspected the element to find the id of noradio is already disabled itself so no need to check for that.
+
 6. Full suite, fix what breaks
 
 Reading Documentation for this Phase:
-1. playwright.dev/docs/writing-tests
-2. playwright.dev/docs/locators
+1. https://playwright.dev/docs/writing-tests
+2. https://playwright.dev/docs/locators
 3. https://playwright.dev/docs/test-assertions
+4. https://playwright.dev/docs/best-practices
+5. https://playwright.dev/docs/input
