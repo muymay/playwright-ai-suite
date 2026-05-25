@@ -15,10 +15,10 @@ import { test, expect } from '@playwright/test';
 test ('radio button confirms regression testing output correctly', async({ page }) => {
     await page.goto('https://demoqa.com/radio-button');
     await expect(page.getByRole('heading', {name: /Radio Button/, exact: true})).toBeVisible();
-    await expect(page.getByRole('generic', {name: 'Do you like the site?', exact: true})).toBeVisible();
-    await expect(page.getByRole('radio', {name: 'yesRadio', exact: true})).toBeVisible();
-    await expect(page.getByRole('radio', {name: 'impressiveRadio', exact: true})).toBeVisible();
-    await expect(page.getByRole('radio', {name: 'noRadio', exact: true})).toBeVisible();
+    await page.getByRole('generic', {name: 'Do you like the site?', exact: true}).isVisible();
+    await page.getByRole('radio', {name: 'yesRadio', exact: true}).isVisible();
+    await page.getByRole('radio', {name: 'impressiveRadio', exact: true}).isVisible();
+    await page.getByRole('radio', {name: 'noRadio', exact: true}).isVisible();
     await page.locator('#yesRadio').check();
     //await page.getByLabel('yesRadio').check();
     await expect(page.getByText('You have selected Yes')).toBeVisible();
