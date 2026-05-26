@@ -47,24 +47,24 @@ Fixed: used locator, and inspected the element to find the id of noradio is alre
 5. Dropdown [May 25, 2026]
 
 Build: dropdown regression test covering 4 dropdown types
-Learned: selectOption only works on native <select> elements, for custom dropdowns, thus using the outline // page.locator('[parent]').getByRole('option', { name: 'Green' }). Multiselect requires scoping to parent listbox container stritct mode violation solved by scoping the parent container. Always inspect the elemnt to understand its structure
-Bug: getByRole('option') for custom dropdowns, matched two elements the first dropdown
+Learned: selectOption only works on native `<select>` elements, for custom dropdowns, thus using the outline `page.locator('[parent]').getByRole('option', { name: 'Green' })`. Multiselect requires scoping to parent listbox container stritct mode violation solved by scoping the parent container. Always inspect the elemnt to understand its structure
+Bug: `getByRole('option')` for custom dropdowns, matched two elements the first dropdown
 Fixed: scoped the locator.
+
 
 6. Full suite, fix what breaks [May 25, 2026]
 npx playwright test
 output: 
-Running 7 tests using 5 workers
+`Running 7 tests using 5 workers`
+  `✓  1 …io.spec.ts:15:5 › radio button confirms regression testing output correctly (10.0s)`
+  `✓  2 example.spec.ts:8:5 › homepage has correct title (929ms)`
+  `✓  3 dropdown.spec.ts:3:5 › dropdown produces the correct output (13.7s)`
+  `✓  4 login.spec.ts:6:5 › login should fail before registration (14.1s)`
+  `✓  5 checkbox.spec.ts:30:5 › checkbox form confirms outputs correctly (5.5s)`
+  `✓  6 textbox.spec.ts:11:5 › text box form displays submitted data correctly (13.5s)`
+  `✓  7 login.spec.ts:39:5 › login should pass for registration (3.1s)`
 
-  ✓  1 …io.spec.ts:15:5 › radio button confirms regression testing output correctly (10.0s)
-  ✓  2 example.spec.ts:8:5 › homepage has correct title (929ms)
-  ✓  3 dropdown.spec.ts:3:5 › dropdown produces the correct output (13.7s)
-  ✓  4 login.spec.ts:6:5 › login should fail before registration (14.1s)
-  ✓  5 checkbox.spec.ts:30:5 › checkbox form confirms outputs correctly (5.5s)
-  ✓  6 textbox.spec.ts:11:5 › text box form displays submitted data correctly (13.5s)
-  ✓  7 login.spec.ts:39:5 › login should pass for registration (3.1s)
-
-  7 passed (17.7s)
+  `7 passed (17.7s)`
 
 Learned: parallel workers run test simultaneously, thats why 7 tests in 17s test isolation means order doesn't matter a clean full suite run is the best way to test the stability of the tests and catch any broken tests after changes. Always run the full suite after making changes to catch any broken tests.
 
@@ -82,14 +82,14 @@ Built: buttons page test working with copilot [focused on debugging and understa
 Copilot got wrong:
   - .main-header locator didn't exist on the page
   - test name said "click me" but targeted double click button
-  - page.click() twice is not the same as dblclick()
-  - chained getByRole('paragraph') inside #doubleClickMessage unnecessary
-  - #dynamicClickMessage id changes on refresh > needed getByRole instead
+  - `page.click()` twice is not the same as `dblclick()`
+  - chained `getByRole('paragraph')` inside `#doubleClickMessage` unnecessary
+  - `#dynamicClickMessage` id changes on refresh > needed `getByRole()` instead
 Fixed and added myself:
-  - getByRole('heading') instead of .main-header
-  - dblclick() for double click events
-  - simplified assertion to locator('#doubleClickMessage').toBeVisible()
-  - used getByRole('button', {name: 'Click Me', exact: true}) for dynamic id
+  - `getByRole('heading')` instead of .main-header
+  - `dblclick()` for double click events
+  - simplified assertion to `locator('#doubleClickMessage').toBeVisible()`
+  - used `getByRole('button', {name: 'Click Me', exact: true})` for dynamic id
 
 Key lesson: Copilot predicts patterns it does not know your page. Every suggestion needs manual verification before accepting.
 
