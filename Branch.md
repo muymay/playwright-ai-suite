@@ -10,3 +10,9 @@ Fresh branch:
 - git add .
 - git commit -m "commit message"
 - git push origin <branch-name>
+
+- git add .
+- git commit -m "test: add copilot webtables test"
+- git checkout main
+- git merge test/copilot-webtables
+- git push origin main
