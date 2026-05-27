@@ -108,7 +108,8 @@ Fixed and added myself:
   - used error-context.md as discovery tool for disabled elements
 Key lesson: Copilot can find some elements but miss others, especially if they are not standard or require interaction to appear. Manual exploration of the page is essential to create comprehensive tests.
 
-Third test with Copilot:
+Third test with Copilot: https://demoqa.com/automation-practice-form [May 27, 2026]
+
 
 **Phase 4 **
 
