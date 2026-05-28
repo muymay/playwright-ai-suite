@@ -109,7 +109,23 @@ Fixed and added myself:
 Key lesson: Copilot can find some elements but miss others, especially if they are not standard or require interaction to appear. Manual exploration of the page is essential to create comprehensive tests.
 
 Third test with Copilot: https://demoqa.com/automation-practice-form [May 27, 2026]
+Branch: test/copilot-practice-form
 
+Built: full practice form test all field types covered [kinda]
+Copilot got wrong:
+  - page.fill() old syntax vs page.locator().fill()
+  - keyboard.press('Enter') submitted the form instead of 
+    selecting from autocomplete
+  - state/city used wrong selectors #state instead of 
+    #react-select-3-input
+  - missed file upload field entirely still didn't include it in the test
+
+Fixed myself:
+  - replaced Enter with .subjects-auto-complete__option click
+  - used systematic debug isolation to find exact trigger
+  - scoped state/city to react-select inputs and listbox
+  
+Key lesson: Copilot can generate a lot of code but it may be outdated or not fit the specific page structure. Systematic debugging and isolation of each step is crucial to identify and fix issues in the generated code.
 
 **Phase 4 **
 
