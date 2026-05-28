@@ -127,8 +127,9 @@ Fixed myself:
   
 Key lesson: Copilot can generate a lot of code but it may be outdated or not fit the specific page structure. Systematic debugging and isolation of each step is crucial to identify and fix issues in the generated code.
 
-**Phase 4 **
-
 Reading Documentation for this Phase: 
 1. https://playwright.dev/docs/codegen
 2. https://docs.github.com/en/copilot/quickstart
+
+**Phase 4: AI Edge Case Suggester**
+
