@@ -115,7 +115,6 @@
     await page.getByRole('button', {name: 'Submit', exact: true}).click();
 
     // Verify success
-    await expect(page.locator('#example-modal-sizes-title-lg'))
-        .toHaveText('Thanks for submitting the form');
+    await expect(page.locator('#example-modal-sizes-title-lg')).toHaveText('Thanks for submitting the form');
     await page.waitForTimeout(3000);
     });
