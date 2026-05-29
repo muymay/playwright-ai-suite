@@ -150,6 +150,10 @@ Learned: ts-node needs tsconfig.json to run
          response comes back as content array
          actual text lives in message.content[0].text
 
+[May 29, 2026]
+Why does removing await give you undefined instead of freezing?
+Removing await gives the output undefined because the function returns a Promise that has not yet resolved to a value, it skips the pending operation.
+
 Reading Documentation for this Phase: 
 1. https://platform.claude.com/docs/en/api/overview
 2. https://platform.claude.com/docs/en/api/messages
