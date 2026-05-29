@@ -153,6 +153,23 @@ Learned: ts-node needs tsconfig.json to run
 [May 29, 2026]
 Why does removing await give you undefined instead of freezing?
 Removing await gives the output undefined because the function returns a Promise that has not yet resolved to a value, it skips the pending operation.
+Goal:
+Input: plain English feature Description
+Output: 5 specific, actional edge cases
+
+3 features tested:
+1. Login form with email and password fields
+2. Search box that filters a data table
+3. Registration form with name, email, and password
+
+Built: suggestEdgeCases() function — takes feature description, 
+       returns 5 AI-generated edge cases
+Learned: template literals allow dynamic prompts
+         message.content[0].text extracts clean text from response
+         async functions must be called — missing main() = no output
+         Promise<void> return type for async functions with no return value
+Key insight: AI finds edge cases humans miss — Unicode normalization,
+             race conditions, injection vulnerabilities
 
 Reading Documentation for this Phase: 
 1. https://platform.claude.com/docs/en/api/overview
