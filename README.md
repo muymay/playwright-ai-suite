@@ -133,3 +133,24 @@ Reading Documentation for this Phase:
 
 **Phase 4: AI Edge Case Suggester**
 
+1. Takes a plain English feature description as input
+2. Sends it to the Claude API
+3. Gets back 5 edge cases a manual tester might miss
+4. Prints them out ready to write Playwright tests for
+
+[May 28, 2026]
+Set Up:
+npm install @anthropic-ai/sdk dotenv
+npm install -D ts-node @types/node
+
+Branch: feature/ai-edge-suggester
+Built: first Claude API call from TypeScript
+Learned: ts-node needs tsconfig.json to run
+         must run from project root not subfolder
+         response comes back as content array
+         actual text lives in message.content[0].text
+
+Reading Documentation for this Phase: 
+1. https://platform.claude.com/docs/en/api/overview
+2. https://platform.claude.com/docs/en/api/messages
+3. https://www.npmjs.com/package/dotenv
