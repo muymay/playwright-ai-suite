@@ -1,0 +1,34 @@
+Day 2 Phase 4
+npx ts-node ai-edge-cases/suggester.ts
+◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+# 5 Edge Cases for Login Form Testing
+
+1. **Email field accepts whitespace-only input** - Submitting spaces or tabs as the email address without validation rejection.
+
+2. **Password field behavior on browser autofill with outdated credentials** - Browser auto-populates deleted/changed passwords that should no longer be valid in the system.
+
+3. **Concurrent login attempts from same account on multiple devices/browsers** - Session handling when user submits login simultaneously from different locations.
+
+4. **Email field with valid format but extremely long local/domain parts** - Email addresses at RFC 5321 limits (64 chars before @, 255 total) causing database or display issues.
+
+5. **Copy-pasting password with invisible Unicode characters** - Password contains zero-width spaces, right-to-left override marks, or other non-printable characters that appear identical visually.
+# 5 Edge Cases for Search Box Data Table Filter
+
+1. **Searching with leading/trailing whitespace** - Verify if " apple " matches "apple" in the table, and whether spaces are trimmed or treated as distinct characters.
+
+2. **Rapid successive searches before results load** - Enter multiple different search terms quickly in succession to test if race conditions cause mismatched results or stale data display.
+
+3. **Special regex/SQL characters in search input** - Test inputs like `%`, `*`, `\`, `'`, `"`, `;` to ensure they're treated as literal characters and don't break filtering or cause injection vulnerabilities.
+
+4. **Searching during active data table operations** - Filter while simultaneously sorting columns, paginating, or during live data updates to verify filter persists correctly and doesn't conflict.
+
+5. **Unicode and multi-byte characters** - Test non-ASCII characters (emojis 🔍, Chinese characters 中文, accented letters café) to ensure proper encoding, matching, and display in both search and filtered results.
+1. **Whitespace-only input**: Submitting fields containing only spaces, tabs, or newlines that pass basic "required field" validation but contain no actual content.
+
+2. **Concurrent duplicate registrations**: Two users simultaneously submitting the same email address before either record is committed to the database, potentially bypassing unique constraint checks.
+
+3. **Email with valid syntax but non-existent domain**: Entering an email like "user@fakeinvaliddomainthatdoesntexist123.com" that passes regex validation but cannot receive verification emails.
+
+4. **Password field autocomplete interference**: Browser password managers auto-filling mismatched or previously saved credentials that don't meet current password requirements but bypass client-side validation.
+
+5. **Unicode normalization conflicts**: Registering with visually identical emails using different Unicode characters (e.g., "user@domain.com" vs "user@dοmain.com" with Greek omicron), creating duplicate accounts.
