@@ -171,6 +171,14 @@ Learned: template literals allow dynamic prompts
 Key insight: AI finds edge cases humans miss — Unicode normalization,
              race conditions, injection vulnerabilities
 
+[May 30, 2026]
+Built: 2 regression tests from AI-generated edge cases
+Learned: whitespace-only input is a real edge case —
+         some systems accept it and create broken records
+         different error messages for username vs password
+         reveals which field is wrong — security concern
+         full pipeline complete: feature → AI → tests
+
 Reading Documentation for this Phase: 
 1. https://platform.claude.com/docs/en/api/overview
 2. https://platform.claude.com/docs/en/api/messages
